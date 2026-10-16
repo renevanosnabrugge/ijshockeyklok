@@ -9,7 +9,10 @@
     d.querySelector('.sheet-inner').scrollTop = 0;
   }
   $('helpBtn').addEventListener('click', () => open('help'));
-  $('aboutBtn').addEventListener('click', () => open('about'));
+  let aboutVia = 'header';   // how About was opened, so a donate click can say where it came from
+  const openAbout = via => { aboutVia = via; lbTrack('support-open', { via }); open('about'); };
+  $('aboutBtn').addEventListener('click', () => openAbout('header'));
+  $('supportLine').addEventListener('click', () => openAbout('footer'));
   document.querySelectorAll('dialog.page').forEach(d => {
     d.querySelector('.close-page').addEventListener('click', () => d.close());
     d.addEventListener('click', e => { if (e.target === d) d.close(); });
@@ -53,7 +56,7 @@
   $('reportClose').addEventListener('click', () => $('reportModal').close());
   $('reportMail').addEventListener('click', () => lbTrack('report-email'));
   $('reportGithub').addEventListener('click', () => lbTrack('report-github'));
-  $('coffeeLink').addEventListener('click', () => lbTrack('donate-click'));
+  $('coffeeLink').addEventListener('click', () => lbTrack('donate-click', { via: aboutVia }));
   $('reportModal').addEventListener('click', e => { if (e.target === $('reportModal')) $('reportModal').close(); });
 
   // Donation link, contact and maker come from config.json, so they can be changed without code.

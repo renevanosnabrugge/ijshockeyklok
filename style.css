@@ -542,6 +542,31 @@ input[type=range]::-moz-range-thumb { width: 28px; height: 28px; border-radius: 
   .top-actions .icon-btn svg { width: 24px; height: 24px; }
 }
 
+/* ---------- Support (donate) button and line ---------- */
+.support-btn { position: relative; display: flex; align-items: center; gap: 8px; width: auto; padding: 0 16px 0 14px; font-weight: 800; font-size: 17px; letter-spacing: .14em; text-transform: uppercase; color: var(--white); }
+.support-btn svg { width: 30px; height: 30px; }
+.support-heart { display: none; }
+.support-btn.glow { animation: support-glow 2.6s ease-in-out 2; }
+@keyframes support-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(var(--blue-rgb), 0); border-color: var(--line); background: rgba(255, 255, 255, .06); }
+  50% { box-shadow: 0 0 22px 4px rgba(255, 255, 255, .55); border-color: rgba(255, 255, 255, .85); background: rgba(255, 255, 255, .2); }
+}
+.support-line {
+  display: block; width: 100%; max-width: 1280px; margin: 2px auto 0; padding: 6px 12px;
+  border: 0; background: none; cursor: pointer; text-align: center;
+  color: var(--muted); font-size: 14px; letter-spacing: .06em;
+  transition: opacity .6s ease;
+}
+.support-line b { color: var(--white); font-weight: 800; }
+body.running .support-line { opacity: .1; }
+@media (max-width: 560px) {
+  .top-actions .support-btn { width: 48px; padding: 0; display: grid; }
+  .support-text { display: none; }
+  .support-heart { display: block; position: absolute; top: -5px; right: -4px; font-size: 14px; line-height: 1; color: #ff5a6e; text-shadow: 0 1px 3px rgba(0, 0, 0, .5); }
+  .support-line { font-size: 12px; padding: 5px 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .support-btn.glow { animation: none; } }
+
 /* ---------- Team picker ---------- */
 .profile-select { position: relative; flex: 1 1 260px; display: block; }
 .profile-select select {
