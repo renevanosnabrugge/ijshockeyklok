@@ -71,7 +71,8 @@ Anonymous usage statistics come from [Umami](https://umami.is/) (script tag in `
 | `sponsor-open`, `sponsor-visit` | `sponsor`, `kind` | A sponsor logo is tapped / its website button is tapped |
 | `sponsor-invite`, `sponsor-mail` | | "Your logo here" is tapped / the sponsor email is tapped |
 | `report-open`, `report-email`, `report-github` | | Report a problem |
-| `donate-click` | | Buy me a puck |
+| `support-open` | `via` (header / footer) | About is opened with the Support button or the line at the bottom |
+| `donate-click` | `via` (header / footer) | Buy me a puck is tapped, and which of the two opened About |
 | `opened-as-app` | | Opened from the home screen |
 | `audio-rebuilt`, `audio-banner` | | The phone broke the sound and the app repaired it / asked for a tap |
 
@@ -79,7 +80,7 @@ Anonymous usage statistics come from [Umami](https://umami.is/) (script tag in `
 
 ### Help and About
 
-The **?** icon opens a help page with screenshots (`help/`). The **puck** icon opens the About page: who made the app, a **Buy me a puck** donation button (Ko-fi) and the app sponsors. The donation link, contact email and maker name are set in `config.json`; empty values are hidden.
+The **?** icon opens a help page with screenshots (`help/`). The **Support** button (puck icon, with a heart on phones) and the small line at the bottom (*Buy us a puck ♥*) open the About page; the button glows slowly twice each time the clock is started. The About page shows who made the app, a **Buy me a puck** donation button (Ko-fi) and the app sponsors. The donation link, contact email and maker name are set in `config.json`; empty values are hidden.
 
 ## Deploying to GitHub Pages
 

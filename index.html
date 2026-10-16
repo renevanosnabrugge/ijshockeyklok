@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="app-version" content="yl-buzzer-v29">
+<meta name="app-version" content="yl-buzzer-v30">
 <meta name="theme-color" content="#103073">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -85,8 +85,8 @@
     </button>
     <div class="team-hint" id="teamHint" hidden>Tap here to choose your team</div>
     <div class="top-actions">
-      <button class="icon-btn" id="aboutBtn" aria-label="About and donate">
-        <svg><use href="#i-puck"/></svg>
+      <button class="icon-btn support-btn" id="aboutBtn" aria-label="Support this app: buy us a puck">
+        <svg><use href="#i-puck"/></svg><span class="support-text">Support</span><span class="support-heart" aria-hidden="true">♥</span>
       </button>
       <button class="icon-btn" id="helpBtn" aria-label="Help">
         <svg><use href="#i-help"/></svg>
@@ -143,6 +143,7 @@
     <span class="boards-label">Supported by</span>
     <div class="boards-slots" id="boardSlots"></div>
   </aside>
+  <button type="button" class="support-line" id="supportLine">Free, made by volunteers of Dordrecht Lions · <b>Buy us a puck ♥</b></button>
 </div>
 
 

@@ -401,7 +401,15 @@
     st.startedAt = performance.now();
     keepAwake(true);
     render();
+    glowSupport();
   }
+
+  // A slow glow on the Support button, twice, each time the clock is started.
+  function glowSupport() {
+    const b = $('aboutBtn');
+    b.classList.remove('glow'); void b.offsetWidth; b.classList.add('glow');
+  }
+  $('aboutBtn').addEventListener('animationend', e => e.currentTarget.classList.remove('glow'));
 
   function pause() {
     st.acc = elapsed();
